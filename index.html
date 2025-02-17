@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site - Lécio Ferreira</title>
+    <title>Site - Lécio Ferreira</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             background-color: #111;
             color: #fff;
+            margin: 0;
+            padding: 0;
         }
         header {
             padding: 1em;
             background-color: #222;
         }
         nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
+            list-style: none;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-size: 18px;
+            margin: 0 15px;
             transition: color 0.3s;
         }
         nav ul li a:hover {
@@ -38,30 +34,40 @@
         }
         .intro {
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
         }
         .intro h1 {
             font-size: 48px;
             color: #00d8ff;
             animation: fadeIn 2s;
         }
-        .intro p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .whatsapp {
+        .section {
             text-align: center;
-            margin-top: 20px;
+            margin: 30px 0;
         }
-        .whatsapp a {
-            color: #00d8ff;
-            font-size: 18px;
-            text-decoration: none;
+        a.botao {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00d8ff;
+            color: #111;
             font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        a.botao:hover {
+            background-color: #009acd;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            font-size: 14px;
+            color: #bbb;
         }
     </style>
 </head>
@@ -78,14 +84,27 @@
     </header>
 
     <section class="intro">
-        <h1>Criando experiências digitais que transformam ideias em realidade</h1>
-        <p>Sou desenvolvedor web especializado em soluções completas para web.</p>
-        <a href="projetos.html" style="padding: 10px 20px; background: #00d8ff; color: #111; text-decoration: none; font-weight: bold; border-radius: 5px;">Veja meus projetos</a>
+        <h1>🚀 Site  de Lécio Ferreira</h1>
+        <p>Desenvolvedor web com foco em IA e integração de sistemas.</p>
+        <P>Criando experiências digitais que transformam ideias em realidade</P>
+        <P>Venha transformar sua ideia em realidade</P>
     </section>
 
-    <div class="whatsapp">
-        <p>📞 Entre em contato pelo WhatsApp:</p>
-        <a href="https://wa.me/62994579461" target="_blank">62994579461</a>
+    <div class="section">
+        <p>🌐 Conheça meus projetos:</p>
+        <a href="https://gmadfamaitaipu.vercel.app/" class="botao" target="_blank">Visitar Portfólio</a>
+        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Repositorios</a>
     </div>
+
+    <div class="section">
+        <p>📞 Entre em contato:</p>
+        <a href="mailto:lecioweb300@gmail.com" class="botao">E-mail</a>
+        <a href="https://wa.me/62994579461" class="botao" target="_blank">WhatsApp</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Lécio Ferreira | Desenvolvedor Web</p>
+        <p>Email: lecioweb300@gmail.com</p>
+    </footer>
 </body>
 </html>
