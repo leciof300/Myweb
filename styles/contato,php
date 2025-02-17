@@ -1,0 +1,12 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $mensagem = $_POST['mensagem'];
+
+    // Aqui você pode adicionar código para enviar o e-mail ou salvar a mensagem
+    mail("seuemail@dominio.com", "Novo Contato", "Nome: $nome\nE-mail: $email\nMensagem: $mensagem");
+    
+    echo "Mensagem enviada com sucesso!";
+}
+?>

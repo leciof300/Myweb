@@ -1,0 +1,124 @@
+/* Reset de estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e; /* Azul escuro quase roxo */
+    color: #f0f0f0; /* Texto em cor clara para contraste */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #162447; /* Azul escuro quase roxo */
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Estilos da seção de introdução */
+.intro {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #0f4b5c; /* Verde escuro */
+    border-radius: 8px;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* Estilos da seção "Sobre" */
+.sobre {
+    padding: 40px 10%;
+    background-color: #162447; /* Azul escuro quase roxo */
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Estilos dos projetos */
+.projetos {
+    padding: 40px 10%;
+    background-color: #0f4b5c; /* Verde escuro */
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.projeto {
+    margin-bottom: 30px;
+}
+
+.projeto h3 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.projeto p {
+    font-size: 1.2rem;
+    color: #ddd; /* Texto suave */
+}
+
+/* Estilos do formulário de contato */
+.contato {
+    padding: 40px 10%;
+    background-color: #162447; /* Azul escuro quase roxo */
+    border-radius: 8px;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contato label {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contato input,
+.contato textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contato button {
+    background-color: #0f4b5c; /* Verde escuro */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contato button:hover {
+    background-color: #1a1a2e; /* Azul escuro quase roxo */
+}
