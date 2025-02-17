@@ -6,7 +6,7 @@
     <title>Site - Lécio Ferreira</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #111;
             color: #fff;
@@ -21,19 +21,114 @@
             display: flex;
             justify-content: center;
             list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 35px; /* Ajuste preciso da distância entre os itens */
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-size: 18px;
+            margin: 0 25px; /* Alterada apenas a distância entre os itens de navegação */
             transition: color 0.3s;
         }
         nav ul li a:hover {
             color: #00d8ff;
+        }
+        .intro {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .intro h1 {
+            font-size: 48px;
+            color: #00d8ff;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        a.botao {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00d8ff;
+            color: #111;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        a.botao:hover {
+            background-color: #009acd;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1200px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            .intro h1 {
+                font-size: 40px;
+            }
+
+            .section a.botao {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro h1 {
+                font-size: 32px;
+            }
+
+            .section a.botao {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+            .intro h1 {
+                font-size: 28px;
+            }
+
+            .section a.botao {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            footer {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -50,16 +145,18 @@
     </header>
 
     <section class="intro">
-        <h1>🚀 Site  de Lécio Ferreira</h1>
+        <h1>🚀 Site de Lécio Ferreira</h1>
         <p>Desenvolvedor web com foco em IA e integração de sistemas.</p>
-        <P>Criando experiências digitais que transformam ideias em realidade</P>
-        <P>Venha transformar sua ideia em realidade</P>
+        <p>Criando experiências digitais que transformam ideias em realidade</p>
+        <p>Venha transformar sua ideia em realidade</p>
     </section>
 
     <div class="section">
         <p>🌐 Conheça meus projetos:</p>
         <a href="https://gmadfamaitaipu.vercel.app/" class="botao" target="_blank">Visitar Portfólio</a>
-        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Repositorios</a>
+        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Visitar repositorios</a>
+        
+        
     </div>
 
     <div class="section">
