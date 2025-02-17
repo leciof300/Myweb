@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Portfólio</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script>
+        // Validação do formulário antes de enviar
+        function validarFormulario() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem').value;
+
+            // Verificando se os campos não estão vazios
+            if (nome == "" || email == "" || mensagem == "") {
+                alert("Todos os campos são obrigatórios!");
+                return false; // Impede o envio do formulário
+            }
+
+            // Verificando o formato do e-mail
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+
+            return true; // Permite o envio do formulário
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -20,7 +43,7 @@
 
     <section class="contato">
         <h2>Entre em Contato</h2>
-        <form action="contato.php" method="POST">
+        <form action="contato.php" method="POST" onsubmit="return validarFormulario()">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -28,7 +51,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
             <button type="submit">Enviar</button>
         </form>
