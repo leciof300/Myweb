@@ -1,12 +1,21 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
+    // Sanitizando os dados do formulário
+    $nome = htmlspecialchars($_POST['nome']);
+    $email = htmlspecialchars($_POST['email']);
+    $mensagem = htmlspecialchars($_POST['mensagem']);
 
-    // Aqui você pode adicionar código para enviar o e-mail ou salvar a mensagem
-    mail("seuemail@dominio.com", "Novo Contato", "Nome: $nome\nE-mail: $email\nMensagem: $mensagem");
-    
-    echo "Mensagem enviada com sucesso!";
+    // Destinatário do e-mail
+    $to = "lecioweb300@gmail.com"; // O e-mail para onde a mensagem será enviada
+    $subject = "Mensagem de Contato - Portfólio Web";
+    $body = "Nome: $nome\nE-mail: $email\nMensagem: $mensagem";
+    $headers = "From: $email";
+
+    // Enviando o e-mail
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<p>Mensagem enviada com sucesso! Vou responder o mais breve possível.</p>";
+    } else {
+        echo "<p>Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.</p>";
+    }
 }
 ?>
