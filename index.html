@@ -6,66 +6,111 @@
     <title>Site - Lécio Ferreira</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
+        /* Definindo as cores e fontes */
+        :root {
+            --primary-color: #00d8ff; /* Cor verde prateado */
+            --secondary-color: #333;  /* Cor cinza escuro */
+            --text-color: #fff;       /* Texto branco */
+            --highlight-color: #4CAF50; /* Cor verde prateado mais escura */
+            --background-color: #111;  /* Cor de fundo preta */
+            --font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
         }
+
+        /* Estilo para o cabeçalho e navegação */
         header {
-            padding: 1em;
-            background-color: #222;
+            background-color: var(--secondary-color);
+            padding: 1.5em 0;
         }
+
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
         nav ul li a {
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
             font-size: 18px;
-            margin: 0 25px; /* Alterada apenas a distância entre os itens de navegação */
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
+
         nav ul li a:hover {
-            color: #00d8ff;
+            color: var(--highlight-color);
+            transform: scale(1.1);
         }
+
+        /* Estilo para a seção de introdução */
         .intro {
             text-align: center;
             padding: 80px 20px;
         }
+
         .intro h1 {
             font-size: 48px;
-            color: #00d8ff;
-            animation: fadeIn 2s;
+            color: var(--primary-color);
+            animation: fadeIn 2s ease-in-out;
         }
+
+        .intro p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .intro p.visible {
+            opacity: 1;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Estilo para as seções de conteúdo */
         .section {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 20px;
         }
-        a.botao {
+
+        .section a.botao {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #00d8ff;
+            background-color: var(--highlight-color);
             color: #111;
             font-weight: bold;
             border-radius: 5px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
         }
-        a.botao:hover {
-            background-color: #009acd;
+
+        .section a.botao:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
         }
+
+        /* Estilo para o rodapé */
         footer {
             text-align: center;
             padding: 15px;
-            background-color: #222;
+            background-color: var(--secondary-color);
             font-size: 14px;
             color: #bbb;
         }
@@ -146,17 +191,15 @@
 
     <section class="intro">
         <h1>🚀 Site de Lécio Ferreira</h1>
-        <p>Desenvolvedor web com foco em IA e integração de sistemas.</p>
-        <p>Criando experiências digitais que transformam ideias em realidade</p>
-        <p>Venha transformar sua ideia em realidade</p>
+        <p class="fade-in-text">Desenvolvedor web com foco em IA e integração de sistemas.</p>
+        <p class="fade-in-text">Criando experiências digitais que transformam ideias em realidade.</p>
+        <p class="fade-in-text">Venha transformar sua ideia em realidade!</p>
     </section>
 
     <div class="section">
         <p>🌐 Conheça meus projetos:</p>
         <a href="https://gmadfamaitaipu.vercel.app/" class="botao" target="_blank">Visitar Portfólio</a>
-        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Visitar repositorios</a>
-        
-        
+        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Visitar Repositórios</a>
     </div>
 
     <div class="section">
@@ -169,5 +212,17 @@
         <p>© 2025 Lécio Ferreira | Desenvolvedor Web</p>
         <p>Email: lecioweb300@gmail.com</p>
     </footer>
+
+    <script>
+        // Animação das palavras ao passar o mouse
+        document.querySelectorAll('.fade-in-text').forEach((element) => {
+            element.addEventListener('mouseover', () => {
+                element.classList.add('visible');
+            });
+            element.addEventListener('mouseout', () => {
+                element.classList.remove('visible');
+            });
+        });
+    </script>
 </body>
 </html>
