@@ -71,11 +71,8 @@
             font-size: 18px;
             margin: 10px 0;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .intro p.visible {
-            opacity: 1;
+            animation: fadeIn 2s forwards;
+            animation-delay: 0.5s;
         }
 
         @keyframes fadeIn {
@@ -191,9 +188,9 @@
 
     <section class="intro">
         <h1>🚀 Site de Lécio Ferreira</h1>
-        <p class="fade-in-text">Desenvolvedor web com foco em IA e integração de sistemas.</p>
-        <p class="fade-in-text">Criando experiências digitais que transformam ideias em realidade.</p>
-        <p class="fade-in-text">Venha transformar sua ideia em realidade!</p>
+        <p>Desenvolvedor web com foco em IA e integração de sistemas.</p>
+        <p>Criando experiências digitais que transformam ideias em realidade.</p>
+        <p>Venha transformar sua ideia em realidade!</p>
     </section>
 
     <div class="section">
@@ -212,17 +209,5 @@
         <p>© 2025 Lécio Ferreira | Desenvolvedor Web</p>
         <p>Email: lecioweb300@gmail.com</p>
     </footer>
-
-    <script>
-        // Animação das palavras ao passar o mouse
-        document.querySelectorAll('.fade-in-text').forEach((element) => {
-            element.addEventListener('mouseover', () => {
-                element.classList.add('visible');
-            });
-            element.addEventListener('mouseout', () => {
-                element.classList.remove('visible');
-            });
-        });
-    </script>
 </body>
 </html>
