@@ -3,210 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site - Lécio Ferreira</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Portfólio - Lécio Ferreira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Definindo as cores e fontes */
         :root {
-            --primary-color: #00d8ff; /* Cor verde prateado */
-            --secondary-color: #333;  /* Cor cinza escuro */
-            --text-color: #fff;       /* Texto branco */
-            --highlight-color: #4CAF50; /* Cor verde prateado mais escura */
-            --background-color: #111;  /* Cor de fundo preta */
-            --font-family: 'Arial', sans-serif;
+            --primary-color: #00d8ff;
+            --secondary-color: #1a1a1a;
+            --highlight-color: #4CAF50;
+            --background-color: #111;
+            --text-color: #fff;
+            --font-family: 'Poppins', sans-serif;
+            --button-hover-color: #008C99;
+            --shadow-color: rgba(0, 216, 255, 0.2);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: var(--font-family);
             background-color: var(--background-color);
             color: var(--text-color);
-            margin: 0;
-            padding: 0;
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Estilo para o cabeçalho e navegação */
         header {
-            background-color: var(--secondary-color);
-            padding: 1.5em 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
         }
 
         nav ul {
-            display: flex;
-            justify-content: center;
             list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         nav ul li a {
             color: var(--text-color);
             text-decoration: none;
             font-size: 18px;
-            font-weight: 600;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: var(--highlight-color);
-            transform: scale(1.1);
+            color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
-        /* Estilo para a seção de introdução */
         .intro {
-            text-align: center;
-            padding: 80px 20px;
+            padding: 150px 20px;
+            opacity: 0;
+            animation: fadeInIntro 2s forwards 0.5s;
         }
 
         .intro h1 {
-            font-size: 48px;
-            color: var(--primary-color);
-            animation: fadeIn 2s ease-in-out;
+            font-size: 80px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .intro p {
-            font-size: 18px;
-            margin: 10px 0;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 0.5s;
+            font-size: 26px;
+            font-weight: 300;
+            opacity: 0.7;
         }
 
-        @keyframes fadeIn {
+        .section {
+            padding: 100px 20px;
+            margin: 50px 0;
+            transition: transform 0.3s ease;
+            animation: fadeInSection 1s forwards;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            padding: 16px 32px;
+            background: var(--highlight-color);
+            color: #111;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 18px var(--shadow-color);
+        }
+
+        .botao:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px var(--shadow-color);
+        }
+
+        footer {
+            padding: 50px 20px;
+            background-color: var(--secondary-color);
+            color: #bbb;
+            font-size: 14px;
+            text-align: center;
+            position: relative;
+        }
+
+        @keyframes fadeInIntro {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Estilo para as seções de conteúdo */
-        .section {
-            text-align: center;
-            margin: 40px 20px;
-        }
-
-        .section a.botao {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--highlight-color);
-            color: #111;
-            font-weight: bold;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin: 10px;
-        }
-
-        .section a.botao:hover {
-            background-color: var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        /* Estilo para o rodapé */
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: var(--secondary-color);
-            font-size: 14px;
-            color: #bbb;
-        }
-
-        /* Responsividade */
-        @media (max-width: 1200px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li a {
-                margin: 10px 0;
-                font-size: 16px;
-            }
-
-            .intro h1 {
-                font-size: 40px;
-            }
-
-            .section a.botao {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
+        @keyframes fadeInSection {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
-            .intro h1 {
-                font-size: 32px;
+            .intro h1 { font-size: 50px; }
+            .section h2 { font-size: 30px; }
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
             }
-
-            .section a.botao {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-
-            footer {
-                font-size: 12px;
+            .botao {
+                padding: 12px 20px;
+                font-size: 14px;
             }
         }
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-            }
-
-            nav ul li a {
-                font-size: 14px;
-                margin: 5px 0;
-            }
-
-            .intro h1 {
-                font-size: 28px;
-            }
-
-            .section a.botao {
-                padding: 8px 14px;
-                font-size: 12px;
-            }
-
-            footer {
-                font-size: 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="intro">
-        <h1>🚀 Site de Lécio Ferreira</h1>
-        <p>Desenvolvedor web com foco em IA e integração de sistemas.</p>
-        <p>Criando experiências digitais que transformam ideias em realidade.</p>
-        <p>Venha transformar sua ideia em realidade!</p>
+    <section id="inicio" class="intro">
+        <h1>🚀 Lécio Ferreira</h1>
+        <p>Desenvolvedor Web | Designer</p>
     </section>
 
-    <div class="section">
-        <p>🌐 Conheça meus projetos:</p>
-        <a href="https://gmadfamaitaipu.vercel.app/" class="botao" target="_blank">Visitar Portfólio</a>
-        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">Visitar Repositórios</a>
-    </div>
+    <section id="sobre" class="section">
+        <h2>Sobre Mim</h2>
+        <p>Sou apaixonado por tecnologia e design, criando soluções inovadoras e experiências digitais incríveis. Meu objetivo é usar o poder da web para transformar ideias em realidade.</p>
+    </section>
 
-    <div class="section">
-        <p>📞 Entre em contato:</p>
+    <section id="projetos" class="section">
+        <h2>Meus Projetos</h2>
+        <p>Confira alguns dos projetos que desenvolvi:</p>
+        <a href="https://gmadfamaitaipu.vercel.app/" class="botao" target="_blank">Visitar Portfólio</a>
+        <p>Veja mais repositórios no meu GitHub:</p>
+        <a href="https://github.com/leciof300?tab=repositories" class="botao" target="_blank">GitHub</a>
+    </section>
+
+    <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Se você quiser conversar ou colaborar em um projeto, entre em contato:</p>
         <a href="mailto:lecioweb300@gmail.com" class="botao">E-mail</a>
         <a href="https://wa.me/62994579461" class="botao" target="_blank">WhatsApp</a>
-    </div>
+    </section>
 
     <footer>
-        <p>© 2025 Lécio Ferreira | Desenvolvedor Web</p>
+        <p>© 2025 Lécio Ferreira | Desenvolvedor Web | Designer</p>
         <p>Email: lecioweb300@gmail.com</p>
     </footer>
 </body>
